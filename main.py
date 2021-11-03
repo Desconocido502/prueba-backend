@@ -6,6 +6,10 @@ import json
 app = Flask(__name__) 
 CORS(app)
 
+@app.route("/")
+def saludo():
+    return "<h1>Hola ya esta corriendo el backend</h1>"
+
 # * Ruta 1
 
 
