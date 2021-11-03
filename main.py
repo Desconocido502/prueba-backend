@@ -87,7 +87,7 @@ def ruta4():
 # *Ruta inicial
 
 
-@app.route('/')
+@app.route('https://backend-pruebaipc.herokuapp.com/')
 def index():
     return f'<h1>The server is on</h1>'
 
