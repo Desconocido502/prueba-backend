@@ -6,11 +6,9 @@ import json
 app = Flask(__name__) 
 CORS(app)
 
-# *Ruta inicial
-@app.route('https://backend-pruebaipc.herokuapp.com/')
-def index():
-    return f'<h1>The server is on</h1>'
-
+@app.route("https://backend-pruebaipc.herokuapp.com/")
+def saludo():
+    return "<h1>Hola ya esta corriendo el backend</h1>"
 
 # * Ruta 1
 
@@ -85,6 +83,13 @@ def calculadoraBasica():
 @app.route('https://backend-pruebaipc.herokuapp.com/ruta4', methods=['POST'])
 def ruta4():
     pass
+
+# *Ruta inicial
+
+
+@app.route('/')
+def index():
+    return f'<h1>The server is on</h1>'
 
 
 if __name__ == "__main__":
