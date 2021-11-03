@@ -6,14 +6,11 @@ import json
 app = Flask(__name__) 
 CORS(app)
 
-@app.route("/")
-def saludo():
-    return "<h1>Hola ya esta corriendo el backend</h1>"
 
 # * Ruta 1
 
 
-@app.route('/analisisLexico', methods=['POST'])
+@app.route('https://backend-pruebaipc.herokuapp.com/analisisLexico', methods=['POST'])
 def analisis_Lexico():
     contenido = request.json['frase']
     palabras = 0
@@ -43,7 +40,7 @@ def analisis_Lexico():
 # * Ruta 2
 
 
-@app.route('/numerosPrimos', methods=['POST'])
+@app.route('https://backend-pruebaipc.herokuapp.com/numerosPrimos', methods=['POST'])
 def numerosPrimos():
     print('Funciona la funcion')
     numeroInicial = int(request.json['numInf'])
@@ -73,21 +70,21 @@ def numerosPrimos():
 # * Ruta 3
 
 
-@app.route('/calculadora_basica', methods=['POST'])
+@app.route('https://backend-pruebaipc.herokuapp.com/calculadora_basica', methods=['POST'])
 def calculadoraBasica():
     pass
 
 # * Ruta 4
 
 
-@app.route('/ruta4', methods=['POST'])
+@app.route('https://backend-pruebaipc.herokuapp.com/ruta4', methods=['POST'])
 def ruta4():
     pass
 
 # *Ruta inicial
 
 
-@app.route('/')
+@app.route('https://backend-pruebaipc.herokuapp.com/')
 def index():
     return f'<h1>The server is on</h1>'
 
