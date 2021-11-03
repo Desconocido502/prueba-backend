@@ -3,17 +3,11 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 import json
 
-app = Flask(__name__) 
+app = Flask(__name__)
 CORS(app)
 
-@app.route("https://backend-pruebaipc.herokuapp.com/")
-def saludo():
-    return "<h1>Hola ya esta corriendo el backend</h1>"
-
 # * Ruta 1
-
-
-@app.route('https://backend-pruebaipc.herokuapp.com/analisisLexico', methods=['POST'])
+@app.route('/analisisLexico', methods=['POST'])
 def analisis_Lexico():
     contenido = request.json['frase']
     palabras = 0
@@ -43,7 +37,7 @@ def analisis_Lexico():
 # * Ruta 2
 
 
-@app.route('https://backend-pruebaipc.herokuapp.com/numerosPrimos', methods=['POST'])
+@app.route('/numerosPrimos', methods=['POST'])
 def numerosPrimos():
     print('Funciona la funcion')
     numeroInicial = int(request.json['numInf'])
@@ -51,7 +45,6 @@ def numerosPrimos():
     print(f'numI:{numeroInicial} y numF: {numeroFinal}')
     # *Solo llega un valor antes del deseado por eso el mas 1
 
-        
     cont = 0
     for numero in range(numeroInicial, (numeroFinal+1)):
         #print(f'\nnumero: {numero}')
@@ -61,7 +54,7 @@ def numerosPrimos():
             residuo = (numero % c)
             if residuo == 0:
                 acum = acum + 1
-        #print(f'acum:{acum}')
+        # print(f'acum:{acum}')
         if acum == 2:
             acum = 0
             cont += 1
@@ -73,21 +66,21 @@ def numerosPrimos():
 # * Ruta 3
 
 
-@app.route('https://backend-pruebaipc.herokuapp.com/calculadora_basica', methods=['POST'])
+@app.route('/calculadora_basica', methods=['POST'])
 def calculadoraBasica():
     pass
 
 # * Ruta 4
 
 
-@app.route('https://backend-pruebaipc.herokuapp.com/ruta4', methods=['POST'])
+@app.route('/ruta4', methods=['POST'])
 def ruta4():
     pass
 
 # *Ruta inicial
 
 
-@app.route('https://backend-pruebaipc.herokuapp.com/')
+@app.route('/')
 def index():
     return f'<h1>The server is on</h1>'
 
